@@ -1,13 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
-<%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%> 
+	<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+	<%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
+	<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+		    
 <!DOCTYPE html>
 <html>
 <head>
-
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,14 +17,17 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Employee - Users</title>
+  <title>HR PORTAL - View Department</title>
 
-  <!-- Custom fonts for this template-->
+  <!-- Custom fonts for this template -->
   <link href="../static/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-  <!-- Custom styles for this template-->
+  <!-- Custom styles for this template -->
   <link href="../static/admin/css/sb-admin-2.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this page -->
+  <link href="../static/admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -32,22 +37,22 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">EMPLOYEE PORTAL</div>
+        <div class="sidebar-brand-text mx-3">HR PORTAL</div>
       </a>
 
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="/admin/employee-user-dashboard">
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/employee-dashboard">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -63,31 +68,69 @@
 
       <!-- Nav Item -Employees List -->
       <li class="nav-item">
-        <a class="nav-link" href="/admin/employee-datatable-users">
+        <a class="nav-link" href="/admin/employee-datatable">
           <i class="fas fa-list"></i>
           <span>Employee List</span></a>
+      </li>
+
+      <!-- Nav Item -Add Employees -->
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/employee-addEmp">
+          <i class="fas fa fa-plus"></i>
+          <span>Add Employee</span></a>
       </li>
 
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
+                  <!-- Heading -->
+                  <div class="sidebar-heading">
+                    Departments
+                  </div>
+            
+            
+                  <!-- Nav Item -Department List -->
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/admin/employee-department-table">
+                      <i class="fas fa-list"></i>
+                      <span>Departments List</span></a>
+                  </li>
+            
+                  <!-- Nav Item -Add Department -->
+                  <li class="nav-item">
+                    <a class="nav-link" href="/admin/employee-department-add">
+                      <i class="fas fa fa-plus"></i>
+                      <span>Add Department</span></a>
+                  </li>
+            
+            
+                  <!-- Divider -->
+                  <hr class="sidebar-divider d-none d-md-block">
 
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Contact
-      </div>
-      
-      <!-- Nav Item -Contact Admin -->
-      <li class="nav-item">
-        <a class="nav-link" href="/admin/contact">
-          <i class="fas fa fa-paper-plane"></i>
-          <span>Contact HR</span></a>
-      </li>
-
-               
-      <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">            
+                  <!-- Heading -->
+                  <div class="sidebar-heading">
+                    Branches
+                  </div>
+            
+            
+                  <!-- Nav Item -Branches List -->
+                  <li class="nav-item">
+                    <a class="nav-link" href="/admin/employee-branch-table">
+                      <i class="fas fa-list"></i>
+                      <span>Branches List</span></a>
+                  </li>
+            
+                  <!-- Nav Item -Add Branch -->
+                  <li class="nav-item">
+                    <a class="nav-link" href="/admin/employee-branch-add">
+                      <i class="fas fa fa-plus"></i>
+                      <span>Add Branch</span></a>
+                  </li>
+            
+            
+                  <!-- Divider -->
+                  <hr class="sidebar-divider d-none d-md-block">
 
 
 
@@ -110,9 +153,11 @@
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
           <!-- Sidebar Toggle (Topbar) -->
-          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-          </button>
+          <form class="form-inline">
+            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+              <i class="fa fa-bars"></i>
+            </button>
+          </form>
 
           <!-- Topbar Search -->
           <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
@@ -215,7 +260,7 @@
                   </div>
                   <div class="font-weight-bold">
                     <div class="text-truncate">We Will Be Back Soon!!</div>
-                    <div class="small text-gray-500">Team11 ï¿½ 58m</div>
+                    <div class="small text-gray-500">Team11 · 58m</div>
                   </div>
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -224,8 +269,8 @@
                     <div class="status-indicator"></div>
                   </div>
                   <div>
-                    <div class="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
-                    <div class="small text-gray-500">Jae Chun ï¿½ 1d</div>
+                    <div class="text-truncate">We Will Be Back Soon!!</div>
+                    <div class="small text-gray-500">Team11 · 1d</div>
                   </div>
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -235,7 +280,7 @@
                   </div>
                   <div>
                     <div class="text-truncate">We Will Be Back Soon!!</div>
-                    <div class="small text-gray-500">Team11 ï¿½ 2d</div>
+                    <div class="small text-gray-500">Team11 · 2d</div>
                   </div>
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -245,7 +290,7 @@
                   </div>
                   <div>
                     <div class="text-truncate">We Will Be Back Soon!!...</div>
-                    <div class="small text-gray-500">Team11 ï¿½ 2w</div>
+                    <div class="small text-gray-500">Team11 · 2w</div>
                   </div>
                 </a>
                 <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
@@ -258,9 +303,9 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                	<security:authorize access="isAuthenticated()">
+                    <security:authorize access="isAuthenticated()">
 					    <security:authentication property="name" />
-					</security:authorize>
+					</security:authorize>                
                 </span>
                 <img class="img-profile rounded-circle" src="https://hindimeinfo.com/wp-content/uploads/2021/06/TCS_Logo-1604x840.jpeg">
               </a>
@@ -272,7 +317,7 @@
                 </a>
                 <form action="logout" method="post">
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/logout">
+                <a class="dropdown-item" href="/logout">                
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                 </a>
@@ -289,54 +334,109 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-          </div>
+          <h1 class="h3 mb-2 text-gray-800" id="department_update_text">View Department</h1>
+          <br>
 
-          <!-- Content Row -->
-          <div class="row">
+          <form class="was-validated" action="department" method="POST">
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label for="validationTooltip01">Department Name</label>
+                <select class="custom-select" id="departmentName" name="departmentName" disabled="disabled" required>
+                  <option value="${department.departmentName}" selected>${department.departmentName}</option>
+                  <option value ="Marketing">Marketing</option>
+                  <option value="Accounting and Finance">Accounting and Finance</option>
+                  <option value="Human Resource Management">Human Resource Management</option>
+                  <option value="Research and Development">Research and Development</option>
+                </select>
+                <div class="invalid-tooltip">
+                  Please Enter Correct Department Name.
+                </div>
+                <div class="valid-tooltip">
+                  Looks good!
+                </div>
+              </div>
 
-            <!-- Total Number of Employees In Institute -->
-            <div class="col-xl-3 col-md-6 mb-4">
-             <a href="/admin/employee-datatable-users">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Number Of Employees</div>
-                      
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-address-card"></i>
-                    </div>
+              
+              <div class="col-md-6 mb-3">
+                <label for="validationTooltip02">Department Phone No</label>
+                <input type="text" class="form-control" id="department_phoneNo" name="dphoneNo" value="${department.dphoneNo}" readonly="readonly" required>
+                <div class="invalid-tooltip">
+                  Please Enter Department Phone No.
+                </div>
+                <div class="valid-tooltip">
+                  Looks good!
+                </div>
+              </div>
+     
+            </div>
+            <div class="form-row">
+
+              <div class="col-md-6 mb-3 mt-4">
+                <label for="validationTooltipUsername">Department Email</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+                  </div>
+                  <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control" id="department_email" name="departmentEmail" value="${department.departmentEmail}" aria-describedby="validationTooltipUsernamePrepend" readonly="readonly" required>
+                  <div class="invalid-tooltip">
+                    Please Enter Department Email.
+                  </div>
+                  <div class="valid-tooltip">
+                    Looks good!
                   </div>
                 </div>
-                </a>
+              </div>
+
+              <div class="col-md-6 mb-3 mt-4">
+                <label for="validationTooltipDPBranch">Branch</label>
+                  <select class="custom-select" id="department_branch" name="department_branch" disabled="disabled" required>
+                    <option value="${department.department_branch}" selected>${department.department_branch}</option>
+                    <option value ="Bangalore">Bangalore</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Canada">Canada</option>
+                  </select>
+                    <div class="invalid-tooltip">
+                      Please Select Correct Branch.
+                    </div>
+                    <div class="valid-tooltip">
+                      Looks good!
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-row">
+              <div class="col-md-12 mb-3 mt-4">
+                <label for="validationTooltip03">Address</label>
+                <input type="text" class="form-control" id="department_address" name="department_address" value="${department.department_address}" readonly="readonly" required>
+                <div class="invalid-tooltip">
+                  Please Provide a Valid Department Address.
+                </div>
+                <div class="valid-tooltip">
+                  Looks good!
+                </div>
               </div>
             </div>
 
-            <!-- ETotal Number Of Departments -->
-            <div class="col-xl-3 col-md-6 mb-4">
-             <a href="/admin/contact">
-              <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Contact Employee Admin</div>
-                      
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-code-branch"></i>
-                    </div>
-                  </div>
+            <div class="form-row">
+              <div class="col-md-12 mb-3 mt-4 mb-4">
+                <label for="validationTooltip03">Department Entention No</label>
+                <input type="text" class="form-control" id="department_ententionNo" name="department_ententionNo" value="${department.department_ententionNo}" readonly="readonly" required>
+                <div class="invalid-tooltip">
+                  Please Provide a Valid Department Entention No.
                 </div>
-                </a>
+                <div class="valid-tooltip">
+                  Looks good!
+                </div>
               </div>
             </div>
-
-        
-           
-          </div>
+            
+			<button class="btn btn-secondary mt-4 mb-6" type="submit" id="department_cancel_edit" hidden="hidden">Save</button>
+            <button class="btn btn-primary mt-4 mb-6" type="button" id="department_view_btn_text" onclick="editDepartment()">Update</button>
+            
+          </form>
+                
 
         </div>
         <!-- /.container-fluid -->
@@ -348,7 +448,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Team11 &copy; project 2023</span>
+            <span>Team11 &copy; Project 2023</span>
           </div>
         </div>
       </footer>
@@ -372,7 +472,7 @@
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">ï¿½</span>
+            <span aria-hidden="true">×</span>
           </button>
         </div>
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
@@ -393,6 +493,15 @@
 
   <!-- Custom scripts for all pages-->
   <script src="../static/admin/js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="../static/admin/vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="../static/admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="../static/admin/js/demo/datatables-demo.js"></script>
+
+  <script src="../static/admin/js/employees_view.js"></script>
 
 </body>
 </html>

@@ -10,13 +10,14 @@
 <html>
 <head>
 
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Employee - Users</title>
+  <title>HR PORTAL- Add Employee</title>
 
   <!-- Custom fonts for this template -->
   <link href="../static/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -28,6 +29,8 @@
   <!-- Custom styles for this page -->
   <link href="../static/admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
   
+  <link href="../static/admin/js/temp/toastr.min.css" rel="stylesheet">
+
 </head>
 
 <body id="page-top">
@@ -36,14 +39,14 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin/employee-datatable-users">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">EMPLOYEE PORTAL</div>
+        <div class="sidebar-brand-text mx-3">HR PORTAL</div>
       </a>
 
       <!-- Divider -->
@@ -51,7 +54,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="/admin/employee-user-dashboard">
+        <a class="nav-link" href="/admin/employee-dashboard">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -67,28 +70,69 @@
 
       <!-- Nav Item -Employees List -->
       <li class="nav-item">
-        <a class="nav-link" href="/admin/employee-datatable-users">
+        <a class="nav-link" href="/admin/employee-datatable">
           <i class="fas fa-list"></i>
           <span>Employee List</span></a>
       </li>
-      
-      <!-- Divider -->
-      <hr class="sidebar-divider">
 
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Contact
-      </div>
-      
-      <!-- Nav Item -Contact HR -->
+      <!-- Nav Item -Add Employees -->
       <li class="nav-item active">
-        <a class="nav-link" href="/admin/contact">
-          <i class="fas fa fa-paper-plane"></i>
-          <span>Contact HR</span></a>
+        <a class="nav-link" href="/admin/employee-addEmp">
+          <i class="fas fa fa-plus"></i>
+          <span>Add Employee</span></a>
       </li>
 
+
       <!-- Divider -->
-      <hr class="sidebar-divider">      
+      <hr class="sidebar-divider d-none d-md-block">
+
+                  <!-- Heading -->
+                  <div class="sidebar-heading">
+                    Departments
+                  </div>
+            
+            
+                  <!-- Nav Item -Department List -->
+                  <li class="nav-item">
+                    <a class="nav-link" href="/admin/employee-department-table">
+                      <i class="fas fa-list"></i>
+                      <span>Departments List</span></a>
+                  </li>
+            
+                  <!-- Nav Item -Add Department -->
+                  <li class="nav-item">
+                    <a class="nav-link" href="/admin/employee-department-add">
+                      <i class="fas fa fa-plus"></i>
+                      <span>Add Department</span></a>
+                  </li>
+            
+            
+                  <!-- Divider -->
+                  <hr class="sidebar-divider d-none d-md-block">
+
+                  <!-- Heading -->
+                  <div class="sidebar-heading">
+                    Branches
+                  </div>
+            
+            
+                  <!-- Nav Item -Branches List -->
+                  <li class="nav-item">
+                    <a class="nav-link" href="/admin/employee-branch-table">
+                      <i class="fas fa-list"></i>
+                      <span>Branches List</span></a>
+                  </li>
+            
+                  <!-- Nav Item -Add Branch -->
+                  <li class="nav-item">
+                    <a class="nav-link" href="/admin/employee-branch-add">
+                      <i class="fas fa fa-plus"></i>
+                      <span>Add Branch</span></a>
+                  </li>
+            
+            
+                  <!-- Divider -->
+                  <hr class="sidebar-divider d-none d-md-block">
 
 
 
@@ -122,7 +166,7 @@
             <div class="input-group">
               <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
-                <button class="btn btn-danger" type="button">
+                <button class="btn btn-primary" type="button">
                   <i class="fas fa-search fa-sm"></i>
                 </button>
               </div>
@@ -161,27 +205,27 @@
               <!-- Dropdown - Alerts -->
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                 <h6 class="dropdown-header">
-                  Alerts Center
+                  Get Reports
                 </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
+                <a class="dropdown-item d-flex align-items-center" href="/admin/employee-datatable/export/pdf">
                   <div class="mr-3">
                     <div class="icon-circle bg-primary">
                       <i class="fas fa-file-alt text-white"></i>
                     </div>
                   </div>
                   <div>
-                    <div class="small text-gray-500">Jan 27, 2023</div>
+                    <div class="small text-gray-500">FILE Format</div>
                     <span class="font-weight-bold">We Will Be Back Soon!!</span>
                   </div>
                 </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
+                <a class="dropdown-item d-flex align-items-center" href="/admin/employee-datatable/export/html">
                   <div class="mr-3">
                     <div class="icon-circle bg-success">
-                      <i class="fas fa-donate text-white"></i>
+                      <i class='fas fa-file-code text-white' style='font-size:14px' ></i>
                     </div>
                   </div>
                   <div>
-                    <div class="small text-gray-500">Jan 27, 2023</div>
+                    <div class="small text-gray-500">FILE Format</div>
                    We Will Be Back Soon!!
                   </div>
                 </a>
@@ -193,7 +237,7 @@
                   </div>
                   <div>
                     <div class="small text-gray-500">Jan 27, 2023</div>
-                    We Will Be Back Soon!!
+                   We Will Be Back Soon!!
                   </div>
                 </a>
                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
@@ -217,8 +261,8 @@
                     <div class="status-indicator bg-success"></div>
                   </div>
                   <div class="font-weight-bold">
-                    <div class="text-truncate">We Will Be Back Soon!!.</div>
-                    <div class="small text-gray-500">Team11  ï¿½ 58m</div>
+                    <div class="text-truncate">We Will Be Back Soon!!</div>
+                    <div class="small text-gray-500">Team11 · 58m</div>
                   </div>
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -228,7 +272,7 @@
                   </div>
                   <div>
                     <div class="text-truncate">We Will Be Back Soon!!</div>
-                    <div class="small text-gray-500">Team11 ï¿½ 1d</div>
+                    <div class="small text-gray-500">We Will Be Back Soon!! · 1d</div>
                   </div>
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -238,7 +282,7 @@
                   </div>
                   <div>
                     <div class="text-truncate">We Will Be Back Soon!!</div>
-                    <div class="small text-gray-500">Team11 ï¿½ 2d</div>
+                    <div class="small text-gray-500">Team11 · 2d</div>
                   </div>
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -248,7 +292,7 @@
                   </div>
                   <div>
                     <div class="text-truncate">We Will Be Back Soon!!...</div>
-                    <div class="small text-gray-500">Team11 ï¿½ 2w</div>
+                    <div class="small text-gray-500">Team11 · 2w</div>
                   </div>
                 </a>
                 <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
@@ -292,58 +336,194 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Contact Admin</h1>
+          <h1 class="h3 mb-2 text-gray-800">Add Employee</h1>
+          <br>
 
-					<div class="row">
+          <form:form action="employee" class="was-validated" >
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label for="validationTooltip01">First name</label>
+                <input type="text" class="form-control" name="firstName" placeholder="First name" required>
+                <div class="invalid-tooltip">
+                  Please enter first-name.
+                </div>
+                <div class="valid-tooltip">
+                  Looks good!
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="validationTooltip02">Last name</label>
+                <input type="text" class="form-control" name="lastName" placeholder="Last name" required>
+                <div class="invalid-tooltip">
+                  Please enter last-name.
+                </div>
+                <div class="valid-tooltip">
+                  Looks good!
+                </div>
+              </div>
+     
+            </div>
+            <div class="form-row">
 
-						<div class="col-lg-12">
+              <div class="col-md-6 mb-3 mt-4">
+                <label for="validationTooltipUsername">Email</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+                  </div>
+                  <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control" name="email" placeholder="Email" aria-describedby="validationTooltipUsernamePrepend" required>
+                  <div class="invalid-tooltip">
+                    Please enter valid email.
+                  </div>
+                  <div class="valid-tooltip">
+                    Looks good!
+                  </div>
+                </div>
+              </div>
 
-							<!-- Basic Card Example -->
-							<div class="card shadow mb-4">
-								<div class="card-header py-3">
-									<h6 class="m-0 font-weight-bold text-primary">Contact
-										HR</h6>
-								</div>
-								<div class="card-body">
-									<form class="was-validated" action="contact" method="POST" enctype="multipart/form-data">
-									<div class="form-row">
-										<div class="col-md-6 mb-3">
-											<label for="validationTooltip01">Full Name</label> <input
-												type="text" class="form-control" id="fullname"
-											    name="fullname" value="" required>
-										</div>
-										<div class="col-md-6 mb-3">
-											<label for="validationTooltip02">Email</label> <input
-												type="email" class="form-control" id="email"
-												name="email" value="" required>
-										</div>
-									</div>
-									<div class="form-row">
-										<div class="col-md-6 mb-3">
-											<label for="validationTooltip04">Content</label>
-											<textarea class="form-control" rows="5" id="content"
-												name="content" required></textarea>
-										</div>
-										<div class="col-md-6 mb-3">
-											<label for="validationTooltip03">Subject</label> <input
-												type="text" class="form-control" id="subject"
-												name="subject" value="" required>
-										</div>										
-										<div class="col-md-6 mb-3">
-											<label for="attachment">Attachment</label><br>
-											<input type="file" id="attachment"
-												name="attachment" value=""/>
-										</div>
-									</div>										
-										<div class="col-md-6 mb-3 mt-5">
-										<button class="btn btn-danger" type="submit" id="contact_send">Send</button>
-										</div>
-									</form>
-								</div>
+              <div class="col-md-6 mb-3 mt-4">
+                <label for="validationTooltipGender">Gender</label>
+                  <select class="custom-select" name="gender" required>
+                    <option value="">Choose...</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                  </select>
+                    <div class="invalid-tooltip">
+                      Please Select Your Gender.
+                    </div>
+                    <div class="valid-tooltip">
+                      Looks good!
+                    </div>
+                </div>
+                
+            </div>
 
-							</div>
-						</div>
-					</div>
+            <div class="form-row">
+              <div class="col-md-6 mb-3 mt-4">
+                <label for="validationTooltip03">Address</label>
+                <input type="text" class="form-control" name="address" placeholder="Address" required>
+                <div class="invalid-tooltip">
+                  Please provide Valid Address.
+                </div>
+                <div class="valid-tooltip">
+                  Looks good!
+                </div>
+              </div>
+              <div class="col-md-3 mb-3 mt-4">
+                <label for="validationTooltip04">NIC</label>
+                <input type="text" class="form-control" name="nic" placeholder="NIC" required>
+                <div class="invalid-tooltip">
+                  Please provide Valid NIC.
+                </div>
+                <div class="valid-tooltip">
+                  Looks good!
+                </div>
+              </div>
+              <div class="col-md-3 mb-3 mt-4">
+                <label for="validationTooltip05">Mobile Number</label>
+                <input type="text" class="form-control" name="mobileNo" placeholder="Mobile Number" required>
+                <div class="invalid-tooltip">
+                  Please provide Mobile Number.
+                </div>
+                <div class="valid-tooltip">
+                  Looks good!
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-4 mt-4">
+                <label for="validationTooltipDesignation">Designation / Position</label>
+                  <select class="custom-select" name="designation" required>
+                    <option value="">Choose...</option>
+                    <option value ="Manager">Manager</option>
+                    <option value="Reception">Reception</option>
+                    <option value="Web Manager">Web Manager</option>
+                  </select>
+                    <div class="invalid-tooltip">
+                      Please Select Valid Designation.
+                    </div>
+                    <div class="valid-tooltip">
+                      Looks good!
+                    </div>
+                </div>
+
+              <div class="col-md-3 mb-4 mt-4">
+                <label for="validationTooltip05">Birth Date</label>
+                <input type="date" class="form-control" name="birthday" placeholder="Birth Date" required>
+                <div class="invalid-tooltip">
+                  Please provide Birth Date.
+                </div>
+                <div class="valid-tooltip">
+                  Looks good!
+                </div>
+              </div>
+
+              <div class="col-md-3 mb-4 mt-4">
+                <label for="validationTooltip05">Joined Date</label>
+                <input type="date" class="form-control" name="joinedDate" placeholder="Joined Date" required>
+                <div class="invalid-tooltip">
+                  Please provide Joined Date.
+                </div>
+                <div class="valid-tooltip">
+                  Looks good!
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-4 mt-4">
+                <label for="validationTooltipDesignation">Branch</label>
+                  <select class="custom-select" id="branch" name="branch" required>
+                    <option value="">Choose...</option>
+                    <option value ="Bangalore">Bangalore</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Canada">Canada</option>
+                  </select>
+                    <div class="invalid-tooltip">
+                      Please Select Valid Branch.
+                    </div>
+                    <div class="valid-tooltip">
+                      Looks good!
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4 mt-4">
+                  <label for="validationTooltipDesignation">Department</label>
+                    <select class="custom-select" id="normal_emp_add_department" name="department" required>
+                      <option value="">Choose...</option>
+                      <option value ="Marketing">Marketing</option>
+                      <option value="Accounting and Finance">Accounting and Finance</option>
+                      <option value="Human Resource Management">Human Resource Management</option>
+                      <option value="Research and Development">Research and Development</option>
+                    </select>
+                      <div class="invalid-tooltip">
+                        Please Select Valid Department.
+                      </div>
+                      <div class="valid-tooltip">
+                        Looks good!
+                      </div>
+                  </div>
+
+            </div>
+
+         
+              <div class="form-row">
+                <div class="col-md-6 mb-5 mt-4">
+                  <label for="validationTooltip03">Current Password</label>
+                  <input type="password" class="form-control" name="password" placeholder="Current Password" required>
+                  <div class="invalid-tooltip">
+                    Please Enter Current Password.
+                  </div>
+                  <div class="valid-tooltip">
+                    Looks good!
+                  </div>
+                </div>
+             </div>   
+
+
+            <button class="btn btn-primary mt-4 mb-4" type="submit" id="add_btn">Add Employee</button>
+            <button class="btn btn-secondary mt-4 mb-4" type="submit">Cancel</button>
+          </form:form>
+                
 
         </div>
         <!-- /.container-fluid -->
@@ -379,7 +559,7 @@
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">ï¿½</span>
+            <span aria-hidden="true">×</span>
           </button>
         </div>
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
@@ -407,6 +587,33 @@
 
   <!-- Page level custom scripts -->
   <script src="../static/admin/js/demo/datatables-demo.js"></script>
+  
+  <!-- Add Button custom scripts -->
+  <script src="../static/admin/js/temp/jquery-3.5.1.min.js"></script>
+  <script src="../static/admin/js/temp/toastr.min.js"></script>
+  
+  <script>
+  	$('#add_btn').on('click', function(){
+  		toastr.options = {
+  			  "closeButton": true,
+  			  "debug": false,
+  			  "newestOnTop": false,
+  			  "progressBar": true,
+  			  "positionClass": "toast-top-center",
+  			  "preventDuplicates": false,
+  			  "onclick": null,
+  			  "showDuration": "300",
+  			  "hideDuration": "1000",
+  			  "timeOut": "5000",
+  			  "extendedTimeOut": "1000",
+  			  "showEasing": "swing",
+  			  "hideEasing": "linear",
+  			  "showMethod": "fadeIn",
+  			  "hideMethod": "fadeOut"
+  			}
+  			toastr["success"]("Employee Added Successful", "Successfully Added!")
+  	})
+  </script>
   
 </body>
 </html>

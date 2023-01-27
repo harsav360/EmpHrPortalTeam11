@@ -53,12 +53,12 @@ public class ContactController {
 		mailContent += "<p><b>Content:</b> " + content + "</p>";
 		mailContent += "<hr><img src='cid:logoImage' />";
 		
-		helper.setFrom("ashan.javatest@gmail.com", "Jeewa Employees");
-		helper.setTo("example@gmail.com"); // Add you email name
+		helper.setFrom("contactUs.com", "TCS Employee");
+		helper.setTo("annu@gmail.com"); // Add you email name
 		helper.setSubject(mailSubject);
 		helper.setText(mailContent, true);
 		
-		ClassPathResource resource = new ClassPathResource("/static/images/JeewaEducationLogo.png");
+		ClassPathResource resource = new ClassPathResource("/static/images/tcs.png");
 		helper.addInline("logoImage", resource);
 		
 		if(!multipartFile.isEmpty()) {

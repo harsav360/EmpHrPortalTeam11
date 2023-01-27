@@ -8,14 +8,13 @@
 <html>
 <head>
 
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Employee - Users</title>
+  <title>HR PORTAL</title>
 
   <!-- Custom fonts for this template-->
   <link href="../static/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -32,14 +31,14 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">EMPLOYEE PORTAL</div>
+        <div class="sidebar-brand-text mx-3">HR PORTAL</div>
       </a>
 
       <!-- Divider -->
@@ -47,7 +46,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="/admin/employee-user-dashboard">
+        <a class="nav-link" href="/admin/employee-dashboard">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -63,9 +62,16 @@
 
       <!-- Nav Item -Employees List -->
       <li class="nav-item">
-        <a class="nav-link" href="/admin/employee-datatable-users">
+        <a class="nav-link" href="/admin/employee-datatable">
           <i class="fas fa-list"></i>
           <span>Employee List</span></a>
+      </li>
+
+      <!-- Nav Item -Add Employees -->
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/employee-addEmp">
+          <i class="fas fa fa-plus"></i>
+          <span>Add Employee</span></a>
       </li>
 
 
@@ -73,21 +79,53 @@
       <hr class="sidebar-divider d-none d-md-block">
 
 
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Contact
-      </div>
+            <!-- Heading -->
+            <div class="sidebar-heading">
+              Departments
+            </div>
       
-      <!-- Nav Item -Contact Admin -->
-      <li class="nav-item">
-        <a class="nav-link" href="/admin/contact">
-          <i class="fas fa fa-paper-plane"></i>
-          <span>Contact HR</span></a>
-      </li>
+      
+            <!-- Nav Item -Department List -->
+            <li class="nav-item">
+              <a class="nav-link" href="/admin/employee-department-table">
+                <i class="fas fa-list"></i>
+                <span>Departments List</span></a>
+            </li>
+      
+            <!-- Nav Item -Add Department -->
+            <li class="nav-item">
+              <a class="nav-link" href="/admin/employee-department-add">
+                <i class="fas fa fa-plus"></i>
+                <span>Add Department</span></a>
+            </li>
+      
+      
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
 
-               
-      <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">            
+                  <!-- Heading -->
+                  <div class="sidebar-heading">
+                    Branches
+                  </div>
+            
+            
+                  <!-- Nav Item -Branches List -->
+                  <li class="nav-item">
+                    <a class="nav-link" href="/admin/employee-branch-table">
+                      <i class="fas fa-list"></i>
+                      <span>Branches List</span></a>
+                  </li>
+            
+                  <!-- Nav Item -Add Branch -->
+                  <li class="nav-item">
+                    <a class="nav-link" href="/admin/employee-branch-add">
+                      <i class="fas fa fa-plus"></i>
+                      <span>Add Branch</span></a>
+                  </li>
+            
+            
+                  <!-- Divider -->
+                  <hr class="sidebar-divider d-none d-md-block">            
 
 
 
@@ -215,7 +253,7 @@
                   </div>
                   <div class="font-weight-bold">
                     <div class="text-truncate">We Will Be Back Soon!!</div>
-                    <div class="small text-gray-500">Team11 ï¿½ 58m</div>
+                    <div class="small text-gray-500">Team11 · 58m</div>
                   </div>
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -224,8 +262,8 @@
                     <div class="status-indicator"></div>
                   </div>
                   <div>
-                    <div class="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
-                    <div class="small text-gray-500">Jae Chun ï¿½ 1d</div>
+                    <div class="text-truncate">We Will Be Back Soon!!</div>
+                    <div class="small text-gray-500">Team11 · 1d</div>
                   </div>
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -235,7 +273,7 @@
                   </div>
                   <div>
                     <div class="text-truncate">We Will Be Back Soon!!</div>
-                    <div class="small text-gray-500">Team11 ï¿½ 2d</div>
+                    <div class="small text-gray-500">Team11 · 2d</div>
                   </div>
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -245,7 +283,7 @@
                   </div>
                   <div>
                     <div class="text-truncate">We Will Be Back Soon!!...</div>
-                    <div class="small text-gray-500">Team11 ï¿½ 2w</div>
+                    <div class="small text-gray-500">Team11 · 2w</div>
                   </div>
                 </a>
                 <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
@@ -298,7 +336,7 @@
 
             <!-- Total Number of Employees In Institute -->
             <div class="col-xl-3 col-md-6 mb-4">
-             <a href="/admin/employee-datatable-users">
+             <a href="/admin/employee-datatable">
               <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
@@ -317,12 +355,12 @@
 
             <!-- ETotal Number Of Departments -->
             <div class="col-xl-3 col-md-6 mb-4">
-             <a href="/admin/contact">
+             <a href="/admin/employee-department-table">
               <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Contact Employee Admin</div>
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total Number Of Departments</div>
                       
                     </div>
                     <div class="col-auto">
@@ -334,7 +372,47 @@
               </div>
             </div>
 
+            <!-- Total Number Of Branches -->
+            <div class="col-xl-3 col-md-6 mb-4">
+            <a href="/admin/employee-branch-table">
+              <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Total Number Of Branches</div>
+                    
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-home"></i>
+                    </div>
+                  </div>
+                </div>
+                </a>
+              </div>
+            </div>
         
+         <!-- Get Employee Report -->
+            <div class="col-xl-3 col-md-6 mb-4">
+            <a href="/admin/employee-datatable/export/pdf">
+              <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Get Employee Report</div>
+                    
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-clipboard-list"></i>
+                    </div>
+                  </div>
+                </div>
+                </a>
+              </div>
+            </div>
+        
+           
+
+
            
           </div>
 
@@ -348,7 +426,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Team11 &copy; project 2023</span>
+            <span>Team11 &copy; Project 2023</span>
           </div>
         </div>
       </footer>
@@ -372,7 +450,7 @@
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">ï¿½</span>
+            <span aria-hidden="true">×</span>
           </button>
         </div>
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>

@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
-<%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%> 
+	<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+	<%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
+	<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,13 +19,16 @@
 
   <title>Employee - Users</title>
 
-  <!-- Custom fonts for this template-->
+  <!-- Custom fonts for this template -->
   <link href="../static/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-  <!-- Custom styles for this template-->
+  <!-- Custom styles for this template -->
   <link href="../static/admin/css/sb-admin-2.min.css" rel="stylesheet">
 
+  <!-- Custom styles for this page -->
+  <link href="../static/admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+  
 </head>
 
 <body id="page-top">
@@ -46,7 +51,7 @@
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="/admin/employee-user-dashboard">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
@@ -62,16 +67,14 @@
 
 
       <!-- Nav Item -Employees List -->
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="/admin/employee-datatable-users">
           <i class="fas fa-list"></i>
           <span>Employee List</span></a>
       </li>
-
-
+      
       <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">
-
+      <hr class="sidebar-divider">
 
       <!-- Heading -->
       <div class="sidebar-heading">
@@ -82,12 +85,11 @@
       <li class="nav-item">
         <a class="nav-link" href="/admin/contact">
           <i class="fas fa fa-paper-plane"></i>
-          <span>Contact HR</span></a>
+          <span>Contact Admin</span></a>
       </li>
 
-               
       <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">            
+      <hr class="sidebar-divider">      
 
 
 
@@ -110,16 +112,18 @@
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
           <!-- Sidebar Toggle (Topbar) -->
-          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-          </button>
+          <form class="form-inline">
+            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+              <i class="fa fa-bars"></i>
+            </button>
+          </form>
 
           <!-- Topbar Search -->
           <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
               <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
+                <button class="btn btn-danger" type="button">
                   <i class="fas fa-search fa-sm"></i>
                 </button>
               </div>
@@ -158,27 +162,27 @@
               <!-- Dropdown - Alerts -->
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                 <h6 class="dropdown-header">
-                  Get Reports
+                  Alerts Center
                 </h6>
-                <a class="dropdown-item d-flex align-items-center" href="/admin/employee-datatable/export/pdf">
+                <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="mr-3">
                     <div class="icon-circle bg-primary">
                       <i class="fas fa-file-alt text-white"></i>
                     </div>
                   </div>
                   <div>
-                    <div class="small text-gray-500">FILE Format</div>
+                    <div class="small text-gray-500">Jan 27, 2023</div>
                     <span class="font-weight-bold">We Will Be Back Soon!!</span>
                   </div>
                 </a>
-                <a class="dropdown-item d-flex align-items-center" href="/admin/employee-datatable/export/html">
+                <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="mr-3">
                     <div class="icon-circle bg-success">
-                      <i class='fas fa-file-code text-white' style='font-size:14px' ></i>
+                      <i class="fas fa-donate text-white"></i>
                     </div>
                   </div>
                   <div>
-                    <div class="small text-gray-500">FILE Format</div>
+                    <div class="small text-gray-500">Jan 27, 2023</div>
                     We Will Be Back Soon!!
                   </div>
                 </a>
@@ -215,7 +219,7 @@
                   </div>
                   <div class="font-weight-bold">
                     <div class="text-truncate">We Will Be Back Soon!!</div>
-                    <div class="small text-gray-500">Team11 ï¿½ 58m</div>
+                    <div class="small text-gray-500">Team11 · 58m</div>
                   </div>
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -224,8 +228,8 @@
                     <div class="status-indicator"></div>
                   </div>
                   <div>
-                    <div class="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
-                    <div class="small text-gray-500">Jae Chun ï¿½ 1d</div>
+                    <div class="text-truncate">We Will Be Back Soon!!</div>
+                    <div class="small text-gray-500">Team11 · 1d</div>
                   </div>
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -235,7 +239,7 @@
                   </div>
                   <div>
                     <div class="text-truncate">We Will Be Back Soon!!</div>
-                    <div class="small text-gray-500">Team11 ï¿½ 2d</div>
+                    <div class="small text-gray-500">Team11 · 2d</div>
                   </div>
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -245,7 +249,7 @@
                   </div>
                   <div>
                     <div class="text-truncate">We Will Be Back Soon!!...</div>
-                    <div class="small text-gray-500">Team11 ï¿½ 2w</div>
+                    <div class="small text-gray-500">Team11 · 2w</div>
                   </div>
                 </a>
                 <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
@@ -258,7 +262,7 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                	<security:authorize access="isAuthenticated()">
+                    <security:authorize access="isAuthenticated()">
 					    <security:authentication property="name" />
 					</security:authorize>
                 </span>
@@ -289,53 +293,59 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-          </div>
+          <h1 class="h3 mb-2 text-gray-800">All The Employee List</h1>
 
-          <!-- Content Row -->
-          <div class="row">
-
-            <!-- Total Number of Employees In Institute -->
-            <div class="col-xl-3 col-md-6 mb-4">
-             <a href="/admin/employee-datatable-users">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Number Of Employees</div>
-                      
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-address-card"></i>
-                    </div>
-                  </div>
-                </div>
-                </a>
+          <!-- DataTales Employee List -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">All Employees</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>First Name</th>
+                      <th>Email</th>
+                      <th>NIC</th>
+                      <th>Mobile Number</th>
+                      <th>Designation</th>
+                      <th>Branch</th>
+                      <th>Department</th>
+                      <th>Gender</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>First Name</th>
+                      <th>Email</th>
+                      <th>NIC</th>
+                      <th>Mobile Number</th>
+                      <th>Designation</th>
+                      <th>Branch</th>
+                      <th>Department</th>
+                      <th>Gender</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+						<c:forEach var="employee" items="${listEmployees}">
+				
+							<tr>
+								<td>${employee.firstName}</td>
+								<td>${employee.email}</td>
+								<td>${employee.nic}</td>
+								<td>${employee.mobileNo}</td>
+								<td>${employee.designation}</td>
+								<td>${employee.branch}</td>
+								<td>${employee.department}</td>
+								<td>${employee.gender}</td>
+		  
+                  	  </tr>
+                  	  </c:forEach>       
+                  </tbody>
+                </table>
               </div>
             </div>
-
-            <!-- ETotal Number Of Departments -->
-            <div class="col-xl-3 col-md-6 mb-4">
-             <a href="/admin/contact">
-              <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Contact Employee Admin</div>
-                      
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-code-branch"></i>
-                    </div>
-                  </div>
-                </div>
-                </a>
-              </div>
-            </div>
-
-        
-           
           </div>
 
         </div>
@@ -348,7 +358,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Team11 &copy; project 2023</span>
+            <span>Team11 &copy; Project 2023</span>
           </div>
         </div>
       </footer>
@@ -372,7 +382,7 @@
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">ï¿½</span>
+            <span aria-hidden="true">×</span>
           </button>
         </div>
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
@@ -394,5 +404,12 @@
   <!-- Custom scripts for all pages-->
   <script src="../static/admin/js/sb-admin-2.min.js"></script>
 
+  <!-- Page level plugins -->
+  <script src="../static/admin/vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="../static/admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="../static/admin/js/demo/datatables-demo.js"></script>
+  
 </body>
 </html>
