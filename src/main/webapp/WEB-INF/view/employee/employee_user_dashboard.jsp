@@ -296,7 +296,7 @@
           <!-- Content Row -->
           <div class="row">
 
-            <!-- Total Number of Employees In Institute -->
+            <!-- Total Number of Employees In Company -->
             <div class="col-xl-3 col-md-6 mb-4">
              <a href="/admin/employee-datatable-users">
               <div class="card border-left-primary shadow h-100 py-2">
@@ -322,7 +322,7 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Contact Employee Admin</div>
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Contact Employee HR</div>
                       
                     </div>
                     <div class="col-auto">
@@ -348,7 +348,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Team11 &copy; project 2023</span>
+            <span>Copyright &copy; Team11 2023</span>
           </div>
         </div>
       </footer>

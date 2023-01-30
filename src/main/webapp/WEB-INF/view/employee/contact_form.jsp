@@ -292,7 +292,7 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Contact Admin</h1>
+          <h1 class="h3 mb-2 text-gray-800">Contact HR</h1>
 
 					<div class="row">
 

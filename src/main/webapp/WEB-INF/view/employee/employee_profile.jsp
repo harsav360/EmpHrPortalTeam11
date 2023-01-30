@@ -412,10 +412,10 @@
                                           </div>
                                         </div>
                                         <div class="col-md-3 mb-5 mt-4">
-                                          <label for="validationTooltip04">NIC</label>
-                                          <input type="text" class="form-control" id="normal_emp_profile_nic" placeholder="NIC" readonly="readonly" required>
+                                          <label for="validationTooltip04">PINCODE</label>
+                                          <input type="text" class="form-control" id="normal_emp_profile_nic" placeholder="PINCODE" readonly="readonly" required>
                                           <div class="invalid-tooltip">
-                                            Please provide Valid NIC.
+                                            Please provide Valid PINCODE.
                                           </div>
                                           <div class="valid-tooltip">
                                             Looks good!
@@ -480,7 +480,7 @@
                                             <label for="validationTooltipDesignation">Department</label>
                                               <select class="custom-select" id="normal_emp_profile_department" disabled="disabled" required>
                                                 <option value="">Choose...</option>
-                                                <option value ="1">Marketing</option>
+                                                <option value ="1">Information Technology</option>
                                                 <option value="2">Accounting and Finance</option>
                                                 <option value="3">Human Resource Management</option>
                                                 <option value="3">Research and Development</option>
