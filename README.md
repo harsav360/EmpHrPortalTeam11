@@ -58,8 +58,10 @@ HR Portal
 
 
 <img width="960" alt="hr1" src="https://user-images.githubusercontent.com/51308620/215085710-3541a81f-c868-47e2-bc24-669af874d005.png">
-<img width="953" alt="hr2" src="https://user-images.githubusercontent.com/51308620/215086029-7458fa92-f40d-416a-98fe-4036f1c961a3.png">
-<img width="954" alt="hr3" src="https://user-images.githubusercontent.com/51308620/215086077-033d0b1d-a7b7-481f-9eaf-f407a3231023.png">
+<img width="954" alt="second" src="https://user-images.githubusercontent.com/51308620/216272802-00392c55-f2ab-4d3c-b3db-d42fd4b55ae6.png">
+
+<img width="953" alt="third" src="https://user-images.githubusercontent.com/51308620/216273009-5497808d-10b6-491f-9e39-7e2232a348b1.png">
+
 <img width="948" alt="hr4" src="https://user-images.githubusercontent.com/51308620/215086122-0182613e-5270-47d6-ad11-4a17afc7dfec.png">
 <img width="948" alt="hr5" src="https://user-images.githubusercontent.com/51308620/215086180-f1a69eb4-4dca-4f47-b038-f123aec18eb9.png">
 <img width="942" alt="hr6" src="https://user-images.githubusercontent.com/51308620/215086212-8a3e9c74-e31e-451e-a400-45747ecddd01.png">
@@ -69,8 +71,8 @@ HR Portal
 Employee - Portal:
 
 
-<img width="957" alt="emp1" src="https://user-images.githubusercontent.com/51308620/215086627-c938af63-e7e4-4fa0-b751-dae8dd04e1ed.png">
-<img width="954" alt="emp2" src="https://user-images.githubusercontent.com/51308620/215087104-d3ef30d9-6658-4d3b-89ed-25d6d894eb9d.png">
+<img width="960" alt="emp1" src="https://user-images.githubusercontent.com/51308620/216273124-98323ff2-4c6a-477e-9dcd-c04b0b87fe51.png">
+<img width="949" alt="emp2" src="https://user-images.githubusercontent.com/51308620/216273202-35a75cc5-2df7-49a8-a4d0-da2c964a780a.png">
 
 To use the mail option, please use some other email service provider other than google, because due to security constraints, google remove the authentication process
 from the apps that require email address and password both.(Latest update 2022)
