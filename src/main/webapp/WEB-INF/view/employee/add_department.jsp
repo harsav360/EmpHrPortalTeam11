@@ -260,7 +260,7 @@
                   </div>
                   <div class="font-weight-bold">
                     <div class="text-truncate">We Will Be Back Soon!!.</div>
-                    <div class="small text-gray-500">Team11 · 58m</div>
+                    <div class="small text-gray-500">Team11 ï¿½ 58m</div>
                   </div>
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -270,7 +270,7 @@
                   </div>
                   <div>
                     <div class="text-truncate">We Will Be Back Soon!!</div>
-                    <div class="small text-gray-500">Team11 · 1d</div>
+                    <div class="small text-gray-500">Team11 ï¿½ 1d</div>
                   </div>
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -280,7 +280,7 @@
                   </div>
                   <div>
                     <div class="text-truncate">We Will Be Back Soon!!</div>
-                    <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                    <div class="small text-gray-500">Morgan Alvarez ï¿½ 2d</div>
                   </div>
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -290,7 +290,7 @@
                   </div>
                   <div>
                     <div class="text-truncate">We Will Be Back Soon!!...</div>
-                    <div class="small text-gray-500">Team11 · 2w</div>
+                    <div class="small text-gray-500">Team11 ï¿½ 2w</div>
                   </div>
                 </a>
                 <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
@@ -343,7 +343,7 @@
                 <label for="validationTooltip01">Department Name</label>
                 <select class="custom-select" id="department_add_name" name="departmentName" required>
                   <option value="">Choose...</option>
-                  <option value ="Marketing">Marketing</option>
+                  <option value ="Information Technology">Information Technology</option>
                   <option value="Accounting and Finance">Accounting and Finance</option>
                   <option value="Human Resource Management">Human Resource Management</option>
                   <option value="Research and Development">Research and Development</option>
@@ -471,7 +471,7 @@
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
+            <span aria-hidden="true">ï¿½</span>
           </button>
         </div>
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
