@@ -8,7 +8,7 @@ Pre-requisite to run this application in your System.
 Open your Spring Suite ID and Clone this repository in your selected project Folder
    Steps to Clone -> Spring Suite -> Windows -> Show View -> Others -> Git -> Repository -> Clone Repository from web (Also add Clone sub-modules) -> Choose Folder in System -> Working Tree -> Import Project
 
-This application is Spring Security role base authorization. So first time when you run this application, refresh your MYSQL workbench here in selected schema you
+This application is using Spring Security role base authorization. So first time when you run this application, refresh your MYSQL workbench, there in selected schema you
 will find 6 tables.
         *Branches
         *Departments
@@ -31,10 +31,6 @@ user_role -> <img width="392" alt="user_role" src="https://user-images.githubuse
 
 
 Java Code for password Encoder (Run this program inside your testing area of project)
-
-package com.graymatter.demo;
-
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 public class PasswordGenerator {
 
