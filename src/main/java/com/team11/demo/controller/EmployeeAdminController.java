@@ -35,12 +35,6 @@ public class EmployeeAdminController {
 	}
 	
 	
-	@GetMapping("/admin/employee-datatable/export/{format}")
-	public String exportReport(@PathVariable String format,Model model) throws FileNotFoundException, JRException {
-		model.addAttribute("listEmployees",employeeService.exportReport(format));
-		return "redirect:/admin/employee-datatable";
-	}
-	
 	
 	@Autowired
 	private DepartmentService departmentService;

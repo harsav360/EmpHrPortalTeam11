@@ -12,5 +12,4 @@ public interface EmployeeService {
 	void saveEmployee(Employee employee);
 	Employee getEmployeeById(int id);
 	void deleteEmployeeById(int id);
-	String exportReport(String format) throws FileNotFoundException, JRException;
 }
