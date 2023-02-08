@@ -65,7 +65,7 @@
       <li class="nav-item">
         <a class="nav-link" href="/admin/employee-datatable-users">
           <i class="fas fa-list"></i>
-          <span>Employee List</span></a>
+          <span>Employee Details</span></a>
       </li>
 
 
@@ -303,7 +303,7 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Number Of Employees</div>
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Employee Details</div>
                       
                     </div>
                     <div class="col-auto">

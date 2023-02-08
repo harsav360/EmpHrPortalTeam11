@@ -6,6 +6,7 @@
 	<%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
 	<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -70,7 +71,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="/admin/employee-datatable-users">
           <i class="fas fa-list"></i>
-          <span>Employee List</span></a>
+          <span>Employee Details</span></a>
       </li>
       
       <!-- Divider -->
@@ -293,12 +294,12 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">All The Employee List</h1>
+          <h1 class="h3 mb-2 text-gray-800">Employee Details</h1>
 
           <!-- DataTales Employee List -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">All Employees</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Employee Details</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -329,7 +330,9 @@
                   </tfoot>
                   <tbody>
 						<c:forEach var="employee" items="${listEmployees}">
-				
+						<%String username = request.getSession(true).getAttribute("currentUser").toString(); %>
+						<c:if test="${employee.firstName == username}">
+
 							<tr>
 								<td>${employee.firstName}</td>
 								<td>${employee.email}</td>
@@ -340,7 +343,8 @@
 								<td>${employee.department}</td>
 								<td>${employee.gender}</td>
 		  
-                  	  </tr>
+                  	  		</tr>
+                  	  		</c:if>
                   	  </c:forEach>       
                   </tbody>
                 </table>
