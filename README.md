@@ -71,7 +71,7 @@ Employee - Portal:
 <img width="949" alt="emp2" src="https://user-images.githubusercontent.com/51308620/216273202-35a75cc5-2df7-49a8-a4d0-da2c964a780a.png">
 
 To use the mail option, please use some other email service provider other than google, because due to security constraints, google remove the authentication process
-from the apps that require email address and password both.(Latest update 2022)
+from the apps that require email address and password both.(Latest update 2022), This process is also restricted by Yahoo, Yahoo has implemented an option that by default, does not let 3rd party products access the email servers. 
 
 
 
