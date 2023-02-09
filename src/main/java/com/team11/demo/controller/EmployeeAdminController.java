@@ -2,8 +2,11 @@ package com.team11.demo.controller;
 
 
 import java.io.FileNotFoundException;
+import java.net.http.HttpRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,6 +33,9 @@ public class EmployeeAdminController {
 	//new add
 	@GetMapping("/admin/employee-datatable-users")
 	public String employeeDataTableUsers(Model model) {
+		UserDetails userDetails = 	(UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		String username = userDetails.getUsername();
+		model.addAttribute("username",username);
 		model.addAttribute("listEmployees",employeeService.getAllEmployees());
 		return "employee/employee_table_list_users";
 	}

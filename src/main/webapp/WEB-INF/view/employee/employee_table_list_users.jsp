@@ -330,7 +330,6 @@
                   </tfoot>
                   <tbody>
 						<c:forEach var="employee" items="${listEmployees}">
-						<%String username = request.getSession(true).getAttribute("currentUser").toString(); %>
 						<c:if test="${employee.firstName == username}">
 
 							<tr>
